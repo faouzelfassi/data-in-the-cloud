@@ -10,7 +10,7 @@ The idea is to wrap an already made model in a `PythonOperator` that takes the d
 
 Create an empty DAG file that will do the following:
 
-- Download the dataset from S3 to a known path: https://sbd-data-in-the-cloud.s3.eu-west-3.amazonaws.com/petrol_consumption.csv.
+- Download the dataset from S3 to a known path: https://iasd-data-in-the-cloud.s3.eu-west-3.amazonaws.com/petrol_consumption.csv.
 - Then, triggers a PythonOperator to create a pickle of a trained regression model using the Random Forest algorithm: [here is the code to adapt](https://github.com/faouzelfassi/data-in-the-cloud/blob/master/model.py). You should be able to pass the filepath to the dataset as an argument to the PythonOperator in addition to the model pickle desired location.
 - Then, uploads the model pickle to S3 in a timestamped folder (folder named after the execution date of the pipeline).
 - Eventually, deletes the dataset and the model pickle from local storage.
